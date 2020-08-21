@@ -1,0 +1,181 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: darkgreen;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#opponent-face {
+    font-size:15vh;
+}
+
+#opponent-deck, #player-deck {
+    height:21vh;
+
+}
+
+#opponent-deck > * {
+    margin-right:35vw;
+    pointer-events:none;
+}
+
+#player-deck > * {
+    margin-left:35vw;
+    pointer-events:none;
+}
+
+#discard-pile {
+    margin: 4vh 0px;
+    visibility: hidden;
+}
+
+#discard-pile > * {
+    pointer-events:none;
+}
+.opponent-score, .player-score, .message_a {
+    text-align: center;
+    margin: 1em auto;
+    color: #faf3f3;
+    letter-spacing: 0.10em;
+    font-size: 1.1em;
+    font-weight: 900;
+    background-color: rgba(3, 54, 29, 0.5);
+    padding: 5px;
+    /* position: relative; */
+}
+.message_a {
+    position: absolute;
+    top: 30%;
+    left: 45.9vw;
+    display: none;
+}
+
+.card {
+    border-radius:5px;
+    background-color:#FFFFFF;
+    width:16vh;
+    height:21vh;
+}
+
+
+.card-back {
+    background: radial-gradient(#1E2E5F, #9198E5);
+    position: relative;
+    border-radius: 5px;
+}
+.card-back, .card-back::before, .card-back::after{
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    border: 1px solid #bbb;
+}
+.card-back::before, .card-back::after{
+    content: "";
+    position: absolute;
+    width: 99%;
+    height: 95%;
+    background: radial-gradient(#1E2E5F, #9198E5);
+    border-radius: 5px;
+}
+.card-back::before{
+    right: -15px;
+    top: 0;
+    transform: rotate(-2deg);
+    background: radial-gradient(#1E2E5F, #9198E5);
+    z-index: 2;
+}
+.card-back::after{
+    top: 5px;
+    right: 15;
+    transform: rotate(3deg);
+    z-index: 1;
+}
+.card-front {
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3vh;
+    z-index: 1;
+}
+.card-front, .card-front::before, .card-front::after{
+    box-shadow: 4px 2px 3px rgba(82, 78, 78, 0.6);
+    border: 1px solid rgba(100, 93, 93,0.7);
+}
+.card-front::before, .card-front::after{
+    content: "";
+    position: absolute;
+    width: 99%;
+    height: 95%;
+    border-radius: 5px;
+}
+.card-front::before{
+    right: 7px;
+    top: 0;
+    transform: rotate(-2deg);
+    z-index: -2;
+    background-color: #eee;
+    box-shadow: 2px 1px 2px rgba(0,0,0,0.3);
+}
+.card-front::after{
+    top: 5px;
+    right: -5;
+    transform: rotate(2deg);
+    z-index: -1;
+    background-color: #eee;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.right-side-up {
+    position:absolute;
+    left:0.4vh;
+    top:0.4vh;
+    text-align:center;
+}
+
+.flipped {
+    position:absolute;
+    right:0.4vh;
+    bottom:0.4vh;
+    text-align:center;
+    transform: rotate(180deg);
+}
+
+.card-art {
+    display:flex;
+    flex-flow: row wrap;
+    width:60%;
+}
+
+.card-art > * {
+    flex: 50%;
+    text-align:center;
+}
+
+.red {
+    color: #FF0000;
+}
+
+#play-again-wrapper {
+    position:absolute;
+    display:none;
+    height:100%;
+    width:100%;
+    left:0px;
+    top:0px;
+    flex-flow: column;
+    justify-content: center;
+    margin: 0 auto;
+    z-index: 6;
+}
+
+#play-again-control, #win-lose-status {
+    padding: 5vh 0;
+    width:100%;
+    background-color: #FFFFFF;
+    text-align:center;
+    
+}
